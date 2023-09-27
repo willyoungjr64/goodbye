@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name Display Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Please Type your first name.</h1>
+    <form id="nameForm">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="nameDisplay"></div>
+
+    <script>
+        // Get the form and name input element
+        const nameForm = document.getElementById('nameForm');
+        const nameInput = document.getElementById('name');
+
+        // Get the name display div
+        const nameDisplay = document.getElementById('nameDisplay');
+
+        // Event listener for form submission
+        nameForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get the entered name
+            const enteredName = nameInput.value.toLowerCase();
+
+
+            // Display the name
+            if(enteredName == "will") {
+                nameDisplay.textContent = `Hello! You are Will`;
+            } else if (enteredName == "song") {
+                nameDisplay.textContent = `Hello! You are Song. You are one of my closest friends here at OneHope and will continue to be a close friend outside of it. You're a gifted UX designer with a heart and love larger than anyone I've ever had the pleasure of meeting. You'll continue to do great things and our friendship will continue to grow beyond the walls of OneHope.`;
+            } else if (enteredName == "cally") {
+                nameDisplay.textContent = `Hello! You are Cally. You are someone I wished was here in the office so that I could physically interact with you all the time. You are an amazing person and someone I have enjoyed talking to and working with. I hope that we can keep in touch after I'm GONE (kind of) because you're a friend and I've genuinely enjoyed our time together. Thank you for always checking in with me and caring. I appreciated that greatly!`;
+            } else if (enteredName == "kiara") {
+                nameDisplay.textContent = `Hello!!!! You are Kiara. I'm excited to be typing this for you! Wow! You are a great project manager and an even better UX/UI designer. You have an eye for the how and why aspect of design that you'll hone and learn on your journey. You are a close friend and I hope that despite our general introvertedness, we can continue hanging out in social gatherings. I will miss being able to walk into your office and say hi (even when you think I'm only there for Song.).`;
+            } else if (enteredName == "Daniel") {
+                nameDisplay.textContent = `Hello! You are Daniel. You're an excellent leader and I know you'll continue to take your team to greater heights. I always felt like a part of the team and that's mainly because you always helped me feel like a part of it. I've learned from you just by watching how you lead and I hope that we can continue to stay in touch outside of the OneHope walls. I wish I could physically say goodbye but this is good enough! Well, not good enough but as good as it can be.`;
+           
+
+            // Clear the input field
+            nameInput.value = '';
+        });
+    </script>
+</body>
+</html>
